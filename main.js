@@ -114,10 +114,11 @@ function onClickImg(e) {
   if (e.target.nodeName === 'IMG') {
     let carrotCount = countCarrot.innerText;
     if (e.target.classList.contains('carrot')) {
+      carrotAudio.load();
+      carrotAudio.play();
       e.target.remove();
       --carrotCount;
       countCarrot.innerText = carrotCount;
-      carrotAudio.play();
     } else if (e.target.classList.contains('bug')) {
       timeOverGame(interval);
       bugAudio.play();
